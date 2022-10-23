@@ -1,0 +1,104 @@
+<%- include('./includes/header.ejs') %>
+    <div class="dem">
+        <div class="menuAccueil">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <img id='logo' src="/img/logoCuisineSi.jpg" alt="">
+                                <div class="nav_01">
+                                    <li><a href="/admin">Accueil</a></li>
+                                </div>
+                                <div class="nav_01">
+                                    <li><a href="/utilisateur">Les utilisateurs</a></li>
+                                </div>
+                                <div class="nav_01">
+                                    <li><a href="/DemandesAll">Les demandes</a></li>
+                                </div>
+                                <li>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outlok-success dropdown-toggle" type="button" id="b"
+                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Profil
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="list">
+                                            <li><a class="dropdown-item dropdown-sm" id="list1"
+                                                    href="/VosCoordonneesAdmin">Vos coordonnées</a></li>
+                                            <li><a class="dropdown-item" id="list3" href="/logout">Déconnexion</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <div class="propositions">
+            <div class="profil5">
+                <h5>Les demandes Sucrés</h5>
+                <br>
+                <% if(locals.success){ %>
+                    <div class="team" style="margin-top:30px;margin-right:40px">
+                        <table class="ui single line table">
+                            <tbody>
+                                <% for (var i=success.length-1 ;i>=0; i-- ) { %>
+                                    <% if(success[i].choix==="2" ){ %>
+                                        <tr>
+                                            <td>
+                                                <%= success[i].proposition %>
+                                            </td>
+                                            <td>
+                                                <form action="/deleteDemandebyAdmin/<%= success[i].id %>" method="POST">
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <button type="submit" class="btn btn-danger btn-sm"
+                                                        onClick='return confirm("Voulez-vous vraiment supprimer cette demande sucrée ?")'>Supprimer</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <% } %>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                <% } %>
+            </div>
+            <div class="profil5">
+                <h5>Les demandes Salés</h5>
+                <br>
+                <% if(locals.success){ %>
+                    <div class="team" style="margin-top:30px;margin-right:40px">
+                        <table class="ui single line table">
+                            <tbody>
+                                <% for (var i=success.length-1 ;i>=0; i-- ) { %>
+                                    <% if(success[i].choix==="1" ){ %>
+                                        <tr>
+                                            <td>
+                                                <%= success[i].proposition %>
+                                            </td>
+                                            <td>
+                                                <form action="/deleteDemandebyAdmin/<%= success[i].id %>" method="POST">
+                                                    <button type="submit" class="btn btn-danger btn-sm"
+                                                        onClick='return confirm("Voulez-vous vraiment supprimer cette demande salée ?")'>Supprimer</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <% } %>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <br>
+    <p>© 2022 - Bon appétit</p>
+</body>
+</html>

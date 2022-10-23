@@ -1,0 +1,1597 @@
+*{box-sizing: border-box;}
+
+
+.body{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    /*border: 3px solid rgba(0,0,0,.125);*/
+    /*background-color: #0e0700;*/
+    color: dimgrey;
+    /*background-image: url('/img/PHOTO2.jpg');*/
+    /*background-size: cover;*/
+    /* margin:10px;*/
+
+}
+
+.bacg{
+        background-image: url('/img/PHOTO2.jpg');
+
+}
+
+#hom{
+    margin-top: 50px;
+}
+.connexion{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-self: center;
+    align-items: center;
+    width: 40%;
+    height:350px;
+    box-shadow: 15px;
+    border:solid 1px black;
+    box-shadow: 15px 15px 10px #161414;
+    border-radius:15px;
+    margin:9% 0 0 0;
+
+}
+
+.connexion img {
+    width: 250px;
+    margin: 3% 0 0 0;
+}
+
+.page1{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-self: center;
+    align-items: center;
+    width: 40%;
+    /*height:450px;*/
+    box-shadow: 15px;
+    border:solid 1px black;
+    box-shadow: 15px 15px 10px #161414;
+    border-radius:15px;
+    margin:10% 0 0 0;
+
+}
+
+.page2{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-self: center;
+    align-items: center;
+    width: 50%;
+    /*height: 900px;*/
+    box-shadow: 15px;
+    background-color: white;
+    border:solid 1px #aea0a0;
+    box-shadow: 15px 15px 10px #161414;
+    border-radius:15px;
+
+}
+
+.page2 img{
+    /*width: 250px;*/
+    align-self:flex-start;
+    margin:45px 0 0 0 ;
+}
+
+
+.profil1{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-self: center;
+    align-items: center;
+    width: 40%;
+    height:350px;
+    box-shadow: 15px;
+    margin:9% 0 9% 0;
+
+}
+.profil2{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-self: center;
+    align-items: center;
+    width:80%;
+    height:350px;
+    box-shadow: 15px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+
+form#login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+form#example-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+div#carouselExampleSlidesOnly{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#inner {
+    width: 100%;
+}
+
+img{
+    width:250px;
+    align-self: center;
+}
+
+.ingTitre {
+    color:#a79d9d;
+}
+
+.pagRe{
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px;
+    height: 110px;
+    width: 85%;
+    display: flex;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    color: black;
+    margin: 20px;
+}
+
+strong.titreRes {
+    color: black;
+}
+
+b, strong {
+    font-weight: 700;
+    color: #cb7a16eb;
+}
+
+input{
+    width: 350px;
+    height: 30px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+
+#Se-connecter{
+    width: 150px;
+    height: 35px;
+    color: rgb(0, 0, 0);
+    background-color: #ed6921;
+    align-self: flex-end;
+    margin: 3% 0 0 0;
+    float: right;
+    border-radius: 5px;
+    border: solid 1px #ed6921; 
+    font-weight: bold;
+}
+
+#comment{
+    color:gray;
+}
+
+.mil {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.recettee {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    border: 1px solid grey;
+    border-radius: 15px;
+    box-shadow: 15px 10px 10px;
+}
+
+#createCom{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 20px 0;
+}
+
+.Comm {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+
+
+#valideComment{
+    float: right;
+    background-color: white;
+    color: black;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 15px 0 0 
+}
+
+
+#Modifier{
+    width: 150px;
+    height: 35px;
+    color: white;
+    background-color: #1e7f29;
+    align-self: flex-end;
+    margin: 3% 0 0 0;
+    float: right;
+    border-radius: 5px;
+    border: solid 1px #1e7f29;
+    font-weight: bold;
+}
+
+.par3 {
+    display: flex;
+    flex-direction: column;
+    margin: 2% 5% 0 5%;
+}
+
+a{
+    align-self: center;
+    color:#FD2D01;
+    font-family: 'Lato';
+    margin-bottom: 0px;
+
+}
+
+.for{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15% 0 0 0;
+    width: 80%;
+}
+
+.formprofil{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15% 0 0 0;
+    width: 80%;
+}
+
+.aime{
+    display: flex;
+    flex-direction: row;
+}
+
+form.pro {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-danger {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.alert-success {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+
+.milieu1{
+    display: flex;
+    flex-direction:column;
+}
+/* css home */
+.page2{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-self: center;
+    align-items: center;
+    width: 50%;
+    box-shadow: 15px;
+    background-color: white;
+    border:solid 1px #aea0a0;
+    box-shadow: 15px 15px 10px #161414;
+    border-radius:15px;
+
+}
+
+button.btn.btn-outline-danger {
+    margin: 10px;
+    font-size: 12px;
+    float: right;
+}
+button.btn.btn-outline-primary {
+    margin: 10px;
+    font-size: 12px;
+    float: right;
+}
+
+.page1 img{
+    width:250px;
+    align-self: center;
+    margin:45px 0 0 0 ;
+
+}
+
+a{
+    align-self: center;
+    color:#FD2D01;
+    font-family: 'Lato';
+    margin-bottom: 20px;
+
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+.section{
+    width: 70%;
+}
+
+.menu{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+.menu p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    margin:0 0 15px 0;
+}
+.menu input{
+    width:500px;
+}
+.icone{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.icone a{
+    color: black;
+    text-decoration: none;
+}
+.entete{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    background-color:#EBE9E9;
+    border-radius: 5px;
+    width: 100%;
+}
+
+label{
+    color: white;
+}
+
+.dem{
+    border-radius: 5px;
+    box-shadow: 10px 10px 15px;
+    background-image: url(/img/photo2.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.show {
+    display:block;
+    margin: 0 55px 0 0;
+}
+
+.storie{
+    display: flex;
+    flex-direction: column;
+    margin:0 5px 5px 5px;
+}
+.fa-ellipsis{
+     font-size: 25px;
+     margin: 15px 20px 0 0;
+}
+.fa-bookmark-o{
+    margin:5px 20px 0 0;
+
+}
+
+.partie1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 25px 0 0 0;
+    width: 100%;
+}
+
+.new {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    width: 100%;
+}
+
+input#prepa {
+    height: 250px;
+    margin: 35px;
+}
+
+.par2 {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+td{
+    color: black;
+}
+
+.par1 {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section p{
+    font-size: 5px;
+}
+.mileu{
+    display:flex;
+    flex-direction: column;
+    background-color:#EBE9E9;
+    border-radius: 5px;
+    margin:10px 0 0 0;
+    width: 100%;
+}
+
+.team {
+    width: 90%;
+}
+
+
+.MN{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    height: 50px;
+}
+.image1{
+    width: 100%;
+    height: 250px;
+    border:none;
+    border-radius: 5px;
+    margin:0 0 0 0;
+    object-fit: cover;
+}
+.ICO{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+}
+
+.icone1{
+    margin:5px 0 0 30px;
+}
+.commentaire{
+    font-size:10px;
+    color: darkgrey;
+    margin:10px 0 0 20px;
+}
+
+.pied{
+    display: flex;
+    flex-direction: row;
+    margin:10px 0 10px 20px;
+}
+.com{
+    border: none;
+    background-color: #EBE9E9;
+    width: 50%;
+}
+.aside{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.colone{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.sugg{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sugg a{
+    color: grey;
+    font-size: 10px;
+    margin:10px 0 10px 0;
+}
+.aside a{
+    font-size: 10px;
+}
+.aside img{
+    width: 20px;
+    height: 20px;
+}
+.nom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    width: 50%;
+}
+
+.nom a{
+    font-size: 15px;
+    color :black;
+    text-decoration:none;
+}
+.nom1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+.prenom{
+    color: black;
+    text-decoration: none;
+}
+
+.MN img{
+    width: 60px;
+    align-self: center;
+    margin-left: 30px;
+}
+
+.IM {
+    width: 80%;
+    margin: 20px 0 20px 20px;
+}
+
+.IMM {
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+    margin: 20px 0 20px 20px;
+}
+
+h3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: darkgoldenrod;
+    font-size: 30px;
+}
+.dem h3{
+    color:wheat;
+}
+
+.ingrr {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+
+#salon {
+    width: 100%;
+}
+
+.page {
+    width:90%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+h6 {
+    margin-left: 20px;
+}
+
+#Comet{
+    color: gray;
+}
+
+.titRecc{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    color: green;
+    font-family: cursive;
+}
+
+.tit1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.titCom{
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+#Commentaires{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 380px;
+    box-shadow: 15px 15px 10px;
+    align-self: center;
+    border-radius: 4px;
+    margin: 20px 0 30px 0;
+}
+
+.nom p {
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.fa fa-thumbs-up {
+    font-size: 100px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .fa:hover {
+    color: darkblue;
+  }
+ 
+  .fa:hover {
+    color: darkblue;
+  }
+
+  .button {
+    border: none;
+    color: black;
+    background-color: #EBE9E9;
+   
+  }
+
+  .ICO p{
+    margin-right: 3px;
+    margin-top: 10px;
+  }
+
+  #result {
+    margin-left : 30px;
+  }
+
+  #result1 {
+    margin-left: 30px;
+  }
+
+/* @media screen and  (max-width:600px) {
+
+
+    .page1{
+        width: 65%;
+    }
+    .page1 img{
+        width: 100px;
+        margin: 35px 0 0 0;
+    }
+
+    .for{
+        width: 80%;
+    }
+    input{
+        width: 100%;
+        height: 25px;
+    }
+    #Se-connecter{
+        width: 105px;
+        height: 25px;
+        font-size: 11px;
+
+    }
+    a{
+        font-size: 12px;
+    }
+
+    .titre{
+        font-size: 12px;
+    }
+
+    .page1 img{
+        width:130px;
+        align-self: center;
+        margin:60px 0px 10px 30px ;
+    
+    }
+
+    .image1{
+        width: 100%;
+        height: 200px;
+        border:none;
+        border-radius: 5px;
+        margin:0 0 0 0;
+        object-fit: cover;
+    } */
+    
+/* } */
+
+/*css profil */
+
+.head {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.image3{
+    width: 180px;
+    height:50px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+  }
+
+.avatar1 {
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+/*hommmmmmmmmmmmmmmmmmmmme*/
+*{
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+#b {
+    font-size: 13px;
+    font-family: none;
+    font-weight: 600;
+    box-shadow: none;
+    color: #ed8d15eb
+}
+
+#list1 ,#list2, #list3{
+    font-weight: 600;
+    color: #ed8d15eb;
+    font-size: 15px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    color: #e6e3e3;
+}
+
+header{
+    width: 100%;
+}
+
+div#navbarNav {
+    display: flex;
+    justify-content: center;
+}
+
+.nav_01{
+    position: relative;
+    height: 100%;
+    padding: 0 5% 0 5%;
+}
+
+.nav_01:hover a{
+    color: rgb(31, 125, 47);
+}
+
+.nav_01:hover a::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 5px;
+    width: 100%;
+    color: rgb(31, 125, 47);
+}
+
+p{
+    color:#3e8e41;
+    float: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    margin:10px;
+}
+
+header img{
+    width: 180px;
+    height: 180px;
+    
+}
+ul {
+    display: flex;
+    justify-content: space-around;
+    width: 85%;
+}
+
+.titLike{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.listComment{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+button.close {
+    display: flex;
+    align-self: end;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    width: 20px;
+    font-size: 17px;
+}
+
+
+li{
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 80px;
+}
+
+li a{
+    color: rgb(31, 125, 47);
+    color: #ed8d15eb;
+    text-decoration: none;
+}
+li a:hover{
+    color : red;
+    transition: 5s;
+}
+#icon i{ 
+    font-size: 40px;
+    margin-top: 20px;
+}
+#icon{
+    margin-right: 80px;
+    float: right;
+    line-height: 60px;
+    cursor: pointer;
+    color: rgb(31, 125, 47);
+    display: none;
+}
+
+#carte{
+    border:none;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.slider{
+    width: 85%;
+    height: 400px;
+    display: flex;
+    align-self: center;
+    animation: animate 20s ease-in-out infinite;
+    animation-duration: 30s;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: auto;
+    
+}
+.menu{
+    display: flex;
+    flex-direction:column;  
+}
+#Salés,#Sucrés,#recettes{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.image1{
+    display: flex;
+    width:100%;
+    height:300px;
+    align-self: center;
+    filter:opacity(75%);
+   
+}
+.pieds{
+    height: 20%;
+    display:flex;
+    align-items: center;
+    flex-direction:column;
+   
+}
+.RS{
+    display: flex;
+    color: #FA4A0C;
+   
+}
+
+#logo{
+    width: 70px;
+    height: 70px;
+}
+.recipes{
+    width: 20%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    color: #832a2a;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.recipes img{
+    width: 100%;
+    height: 70%;
+    border-radius: 10px 10px 0 0;
+}
+
+.menuu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.forml {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    font-size: 2em;
+    color: #cb7a16eb;
+}
+h6{
+    padding: 2px;
+ }
+button{
+    color: #ffffff;
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.menuAccueil {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    margin: 20px 0 0 0;
+}
+
+.logoCuisine {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.card{
+    margin: 10px;
+}
+
+#cardRecette{
+    width: 250px;
+    align-self: center;
+    height: 180px;
+    object-fit: cover;
+    margin: 20px;
+}
+
+.date{
+    color: darkslategray;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+::before {
+    font-size: 19px;
+    margin: 15px;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light {
+    width: 100%;
+    height: 75px;
+    background-color: white !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+ul.navbar-nav {
+    margin: 0 0 30px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    align-self: center;
+}
+
+th {
+    color: black;
+}
+
+.start{
+    padding: 8px;
+}
+.video{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+    border: 1px solid  rgba(225, 225, 225, 0.563);;
+    background-color: rgb(0, 0, 0,0.8);
+}
+.video h1{
+    color: white;
+}
+footer{ 
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    color:white;
+    width: 100%;
+    height: 47px;
+}
+.infos{
+    display: flex;
+    justify-content: space-between;
+}
+.info1 {
+    width: 100%;
+}
+.infos a {
+    text-decoration: none;
+    color: white;
+}
+.infos a:hover{
+    text-decoration: none;
+    color:red;
+}
+
+.INGD{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.ingPar1{
+    width: 40%;
+}
+
+.ingPar2{
+    width: 40%;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;  
+}
+i{
+    font-size: 25px;
+    margin: 0 10px 0 10px;
+}
+.icons a:hover{
+    color: red;
+}
+footer p{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+
+/*utilisateur*/
+
+.profil3 {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    /* flex-wrap: wrap; */
+    padding: 10px;
+    /* margin: 10px; */
+    align-self: center;
+    width: 85%;
+    margin: 50px;
+}
+
+.profil5 {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    /* flex-wrap: wrap; */
+    padding: 10px;
+    /* margin: 10px; */
+    align-self: center;
+    width: 50%;
+    margin: 50px;
+}
+
+.profil6 {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    /* margin: 10px; */
+    align-self: center;
+    width: 85%;
+    margin: 50px;
+}
+
+
+.users {
+    border: 1px solid black;
+    width: 70%;
+    border-radius: 7px;
+    margin: 0 0 10px;
+    margin: 17px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.userr {
+    width: 100%;
+}
+
+
+button.clos {
+    display: flex;
+    float: right;
+    width: auto;
+    background-color: brown;
+    color: black;
+    margin: 10px;
+    border-radius: 5px;
+    width: 30px;
+    font-size: x-large;
+    align-items: center;
+    justify-content: center;
+}
+
+#carousell{
+    padding-bottom: 250px;
+}
+
+#like{
+    background-color: white;
+    color: green;
+}
+
+#unlike{
+    background-color: white;
+    color: red;
+}
+
+.desc1{
+    color: green;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.footer1 {
+    display: flex;
+    justify-content: center;
+    color: #cb7a16eb;
+    font-weight: bold;
+}
+
+.likeunlike{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/*post*/
+.imagepost{
+    width: 95%;    
+}
+
+.compl {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #ed8d15eb !important;
+}
+
+.ING{
+    color: #ed8d15eb;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+strong.ingRec {
+    color: black; 
+}
+
+/*proposition*/
+.partie4{
+    display: flex;
+    margin: 25px 0 0 0;
+    justify-content: center;
+}
+
+.propositions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+/* Tablette */
+@media screen and (min-width: 768px) and (max-width:950px){
+    div#navbarNav {
+        display:none;
+        z-index: 1;
+    }
+    ul.navbar-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30%;
+        background-color: white;
+        border: 1px solid black;
+        /*border-radius: 5px;*/
+        box-shadow: 15px 15px 10px;
+        float: left;
+        margin: 5px 0 0 0px;
+        align-items: flex-start;
+    }
+    ::before {
+        margin: 7px;
+        content: none ! important ;
+    }
+    header{
+       
+        height: 15px;
+    }
+    header img{
+        width: 150px;
+        height: 120px;
+    }
+    .navbar{
+        margin-bottom:5px !important;
+    }
+    h2{
+        margin: 10px;
+    }
+    .desc1 {
+        margin: 10px;
+        color: green;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+    }
+    li a{
+        font-size: 12px;
+    }
+    li {
+        line-height: 50px;
+    }
+    .recipes{
+        width: 90%;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        color: white;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        background-color: rgb(0, 0, 0,0.8) 
+    }
+    .infos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .recipes img{
+        width:90%;
+        height: 320px;
+        border-radius: 10px 10px 0 0;
+    }
+    nav.navbar.navbar-expand-lg.navbar-light{
+        height: 25px;
+        width: 100%;
+    }
+   #container{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .navbar-collapse.collapse.show{
+        display:none !important;
+    }
+    .pagRe{
+        height: 150px;
+        width: 100%;
+        padding: 5px;
+    }
+    .recettee{
+        margin:30px;
+        width: 95%;
+    }
+    .imagepost {
+        width: 90%;
+        margin: 20px;
+    }
+    .footer{
+        margin: 10px;
+    }
+    .nom {
+        width: 100%;
+    }
+    .compl {
+        width: 90%;
+    }
+    .dem{
+        margin: 70px 20px 20px 20px;
+    }
+    b, strong {
+        font-weight: 700;
+        margin: 0 0 10px 0;
+    }
+    .footer1{
+        display: flex;
+        justify-content: center;
+        color: #cb7a16eb;
+        font-weight: bold;
+    }
+    .menu{
+        margin: 20px;
+    }
+    .start{
+        padding: 15px;
+    }
+    .ingrr {
+        margin: 30px 0 0 0;
+    }
+    h3{
+        margin-top: 10px;
+    }
+    h1{
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+
+/* Mobiles */
+@media screen and (max-width: 750px){
+    
+    div#navbarNav {
+        display:none;
+        z-index: 1;
+    }
+    ul.navbar-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 70%;
+        background-color: white;
+        border: 1px solid black;
+        /*border-radius: 5px;*/
+        box-shadow: 15px 15px 10px;
+        float: left;
+        margin: 5px 0 0 0px;
+        align-items: flex-start;
+    }
+    ::before {
+        margin: 7px;
+        content: none ! important ;
+    }
+    header{
+       
+        height: 15px;
+    }
+    header img{
+        width: 150px;
+        height: 120px;
+    }
+    .navbar{
+        margin-bottom:5px !important;
+    }
+    h2{
+        margin: 10px;
+    }
+    .navbar-collapse.collapse{
+        display:none;
+    }
+    .desc1 {
+        margin: 10px;
+        color: green;
+        font-weight: bold;
+    }
+    li a{
+        font-size: 12px;
+    }
+    li {
+        line-height: 50px;
+    }
+    .recipes{
+        width: 90%;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        color: white;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        background-color: rgb(0, 0, 0,0.8) 
+    }
+    .infos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .recipes img{
+        width:90%;
+        height: 320px;
+        border-radius: 10px 10px 0 0;
+    }
+    nav.navbar.navbar-expand-lg.navbar-light{
+        height: 25px;
+    }
+   #container{
+        display: flex;
+        justify-content: flex-end;
+    }
+    nav.navbar.navbar-expand-lg.navbar-light {
+        width: 100%;
+    }
+    .pagRe{
+        height: 300px;
+        width: 100%;
+        padding: 5px;
+    }
+    .recettee{
+        margin:30px;
+        width: 95%;
+    }
+    .imagepost {
+        width: 90%;
+        margin: 20px;
+    }
+    .footer{
+        margin: 10px;
+    }
+    .nom {
+        width: 100%;
+    }
+    .compl {
+        width: 90%;
+    }
+    .dem{
+        margin: 70px 20px 20px 20px;
+    }
+    b, strong {
+        font-weight: 700;
+        margin: 0 0 10px 0;
+    }
+    .footer1{
+        display: flex;
+        justify-content: center;
+        color: #cb7a16eb;
+        font-weight: bold;
+    }
+    .menu{
+        margin: 20px;
+    }
+    .start{
+        padding: 15px;
+    }
+    .ingrr {
+        margin: 30px 0 0 0;
+    }
+    h3{
+        margin-top: 10px;
+    }
+    h1{
+        font-size: 20px;
+    }
+}
+
+
+    

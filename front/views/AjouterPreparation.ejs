@@ -1,0 +1,105 @@
+<%- include('./includes/header.ejs') %>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <img id='logo' src="/img/logoCuisineSi.jpg" alt="">
+                        <div class="nav_01">
+                            <li><a href="/admin">Accueil</a></li>
+                        </div>
+                        <div class="nav_01">
+                            <li><a href="#mesRecettes">Les recettes</a></li>
+                        </div>
+                        <div class="nav_01">
+                            <li><a href="/utilisateur">Les utilisateurs</a></li>
+                        </div>
+                        <div class="nav_01">
+                            <li><a href="/DemandesAll">Les demandes</a></li>
+                        </div>
+                        <li>
+                            <div class="dropdown">
+                                <button class="btn btn-outlok-success dropdown-toggle" type="button" id="b"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Profil
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="list">
+                                    <li><a class="dropdown-item dropdown-sm" id="list1" href="/VosCoordonneesAdmin">Vos
+                                            coordonnées</a></li>
+                                    <li><a class="dropdown-item" id="list3" href="/logout">Déconnexion</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <hr>
+    <div class="dem">
+        <div class="mil">
+            <% if(locals.success) { %>
+                <br>
+                <h5>Créer les préparations de la recette <%= success.titre %>
+                </h5>
+                <br>
+                <div class="partie1">
+                    <form action="/addPreparation/<%= success.id %> " method="post" class="new">
+                        <div class="forml">
+                            <div class="INGD">
+                                <div class="ingPar1">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                            name="etape1" rows="3" placeholder="Etape 1"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                            name="etape2" rows="3" placeholder="Etape 2"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                            name="etape3" rows="3" placeholder="Etape 3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="ingPar2">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" name="duree"
+                                            rows="3" placeholder="Durée"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% if(locals.error) { %>
+                            <div class="alert alert-danger" role="alert">
+                                <%= locals.error %>
+                            </div>
+                        <% } %>
+                        <% if(locals.success) { %>
+                            <div class="alert alert-success" role="alert">
+                                <%= locals.success %>
+                            </div>
+                        <% } %>
+                        <div class="par3">
+                            <input type="submit" value="Publier" id="Se-connecter" /><br>
+                        </div>
+                    </form>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div class="pieds">
+        <div class="RS">
+            <i class="fa fa-facebook-f" style="font-size:20px"></i>
+            <i class="fa fa-twitter" style="font-size:20px"></i>
+            <i class="fa fa-instagram" style="font-size:20px"></i>
+        </div>
+    </div>
+    <p>© 2022 - Bon appétit</p>
+</body>
+</html>

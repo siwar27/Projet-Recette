@@ -1,0 +1,66 @@
+<%- include('./includes/header.ejs') %>
+    <div class="dem">
+        <div class="menuAccueil">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid" id="container">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <img id='logo' src="/img/logoCuisineSi.jpg" alt="">
+                                <div class="nav_01">
+                                    <li><a href="/">Accueil</a></li>
+                                </div>
+                                <div class="nav_01">
+                                    <li><a href="/Demandes">Demandes</a></li>
+                                </div>
+                                <li>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outlok-success dropdown-toggle" type="button" id="b"
+                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Profil
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="list">
+                                            <li><a class="dropdown-item dropdown-sm" id="list1"
+                                                    href="/VosCoordonnees">Vos coordonnées</a></li>
+                                            <li><a class="dropdown-item" id="list2" href="/VosDemandes">Vos demandes</a>
+                                            </li>
+                                            <li><a class="dropdown-item" id="list3" href="/logout">Déconnexion</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <h3>Vos commentaires </h3>
+        <div class="profil6">
+            <% if(locals.success){ %>
+                <% success.recettee.map((recette)=> { %>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h7 class="card-text">Recette N° : <%= recette.titre %>
+                            </h7>
+                            <form action="/deleteDemandebyUser/<%= recette.id %>" method="post">
+                                <button class="btn btn-outline-danger" type="submit">Supprimer</button>
+                            </form>
+                            <form action="/modifierDemande/<%= recette.id %>" method="get">
+                                <button class="btn btn-outline-primary" type="submit">Modifier</button>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                <% }) %>
+            <% } %>
+        </div>
+    </div>
+    <br>
+    <p>© 2022 - Bon appétit</p>
+</body>
+</html>

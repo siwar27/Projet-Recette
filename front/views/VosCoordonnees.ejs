@@ -1,0 +1,81 @@
+<%- include('./includes/header.ejs') %>
+    <div class="bacg">
+        <div class="menuAccueil">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <img id='logo' src="/img/logoCuisineSi.jpg" alt="">
+                                <div class="nav_01">
+                                    <li><a href="/">Accueil</a></li>
+                                </div>
+                                <div class="nav_01">
+                                    <li><a href="/Demandes">Demande une recette</a></li>
+                                </div>
+                                <li>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outlok-success dropdown-toggle" type="button" id="b"
+                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Profil
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="list">
+                                            <li><a class="dropdown-item dropdown-sm" id="list1"
+                                                    href="/VosCoordonnees">Vos coordonnées</a></li>
+                                            <li><a class="dropdown-item dropdown-sm" id="list1" href="/VosDemandes">Vos
+                                                    demandes</a></li>
+                                            <li><a class="dropdown-item" id="list3" href="/logout">Déconnexion</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <div class="dem">
+            <h3>Vos coordonnées </h3>
+            <div class="profil2">
+                <% if(locals.user){ %>
+                    <% if(user.isAdmin==1){ %>
+                        <a href="/admin">
+                            <p> Se connecter en tanqu'administrateur </p>
+                        </a>
+                    <% } %>
+                <% } %>
+                <% if(locals.user){ %>
+                    <form method="POST" action="/VosCoordonnees" class="info1">
+                        <div class="info">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Nom</label>
+                                <input type="text" class="form-control" name="nom"
+                                    id="exampleInputEmail1" aria-describedby="emailHelp"
+                                    placeholder=<%=user.nom %>>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Prénom</label>
+                                <input type="text" class="form-control" name="prenom"
+                                    id="exampleInputPassword1" placeholder=<%=user.prenom %>>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder=<%=user.email %>>
+                            </div>
+                            <input type="submit" value="Modifier" id="Se-connecter" /><br>
+                        </div>
+                    </form>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <br>
+    <p>© 2022 - Bon appétit</p>
+</body>
+</html>

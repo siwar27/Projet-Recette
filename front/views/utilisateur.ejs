@@ -1,0 +1,87 @@
+<%- include('./includes/header.ejs') %>
+    <div class="dem">
+        <div class="menuAccueil">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <img id='logo' src="/img/logoCuisineSi.jpg" alt="">
+                                <div class="nav_01">
+                                    <li><a href="/admin">Accueil</a></li>
+                                </div>
+                                <div class="nav_01">
+                                    <li><a href="/utilisateur">Les utilisateurs</a></li>
+                                </div>
+                                <div class="nav_01">
+                                    <li><a href="/DemandesAll">Les demandes</a></li>
+                                </div>
+                                <li>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outlok-success dropdown-toggle" type="button" id="b"
+                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Profil
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="list">
+                                            <li><a class="dropdown-item dropdown-sm" id="list1"
+                                                    href="/VosCoordonneesAdmin">Vos coordonnées</a></li>
+                                            <li><a class="dropdown-item" id="list3" href="/logout">Déconnexion</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <div class="profil3">
+            <% if(locals.user){ %>
+                <div class="team" style="margin-top:30px;margin-right:40px">
+                    <table class="ui single line table">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Prénom</th>
+                                <th>Email</th>
+                                <th>Option 1</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for (var i=0; i<user.length; i++ ) { %>
+                                <tr>
+                                    <td>
+                                        <%= user[i].nom %>
+                                    </td>
+                                    <td>
+                                        <%= user[i].prenom %>
+                                    </td>
+                                    <td>
+                                        <%= user[i].email %>
+                                    </td>
+                                    <td>
+                                        <form action="/deleteUser/<%= user[i].id %>" method="POST">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button type="submit" class="btn btn-danger btn-sm"
+                                                onClick='return confirm("Voulez-vous vraiment supprimer cet utilisateur ?")'>Supprimer
+                                                compte</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    <br>
+    </div>
+    <p>© 2022 - Bon appétit</p>
+</body>
+</html>

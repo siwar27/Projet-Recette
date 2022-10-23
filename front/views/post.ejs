@@ -1,0 +1,177 @@
+<%- include('./includes/header.ejs') %>
+    <div class="bacg">
+        <div class="menuAccueil">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <img id='logo' src="/img/logoCuisineSi.jpg" alt="">
+                                <div class="nav_01">
+                                    <li><a href="/">Accueil</a></li>
+                                </div>
+                                <div class="nav_01">
+                                    <li><a href="/Demandes"> Demande une recette </a></li>
+                                </div>
+                                <li>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outlok-success dropdown-toggle" type="button" id="b"
+                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Profil
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="list">
+                                            <li><a class="dropdown-item dropdown-sm" id="list1"
+                                                    href="/VosCoordonnees">Vos coordonnées</a></li>
+                                            <li><a class="dropdown-item dropdown-sm" id="list1" href="/VosDemandes">Vos
+                                                    demandes</a></li>
+                                            <li><a class="dropdown-item" id="list3" href="/logout">Déconnexion</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <br>
+        <div class="mil">
+            <% if(locals.success) { %>
+                <div class="recettee">
+                    <br>
+                    <div class="titRecc">
+                        <%= success.titre %>
+                    </div>
+                    <br>
+                    <div class="nom">
+                        <img src="/img/<%= success.attachement %>" class="imagepost" alt="image">
+                    </div>
+                    <div class="post" role="alert">
+                        <div class="ingrr">
+                            <div class="IM">
+                                <div class="ING">Ingredients</div>
+                                <% success.ingredients.map((ingre)=> { %>
+                                    <% if(ingre.viandes) {%>
+                                        <div class="ingTitre"> Viandes : </div><strong class="ingRec"><%= ingre.viandes %></strong><br>
+                                    <% } %>
+                                    <% if(ingre.epices ) {%>
+                                        <div class="ingTitre">Les épices : </div><strong class="ingRec"> <%= ingre.epices %></strong><br>
+                                    <% } %>
+                                    <% if(ingre.legumes ) {%>
+                                        <div class="ingTitre">Légumes :</div><strong class="ingRec"> <%= ingre.legumes %></strong><br>
+                                    <% } %>
+                                    <% if(ingre.liquides ) {%>
+                                        <div class="ingTitre">Liquides : </div><strong class="ingRec"><%= ingre.liquides %></strong><br>
+                                    <% } %>
+                                    <% if(ingre.sucre ) {%>
+                                        <div class="ingTitre">Sucrés :</div><strong class="ingRec"><%= ingre.sucre %></strong><br>
+                                    <% } %>
+                                    <% if(ingre.fruits ) {%>
+                                        <div class="ingTitre">Fruits :</div><strong class="ingRec"><%= ingre.fruits %></strong><br>
+                                    <% } %>
+                                <% }) %>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="compl">
+                            <div class="IMM">
+                                <div class="ING">Préparations</div>
+                                <% success.preparations.map((prepa)=> { %>
+                                    <% if(prepa.duree) {%>
+                                            <div class="ingTitre">Durée : </div><strong class="ingRec"><%= prepa.duree %></strong><br>
+                                    <% } %>
+                                    <% if(prepa.etape1) {%>
+                                        <div class="ingTitre">Etape 1 : </div><strong class="ingRec"><%= prepa.etape1 %></strong><br>
+                                    <% } %>
+                                    <% if(prepa.etape2) {%>
+                                        <div class="ingTitre">Etape 2 : </div><strong class="ingRec"><%= prepa.etape2 %></strong><br>
+                                    <% } %>
+                                    <% if(prepa.etape3) {%>
+                                        <div class="ingTitre">Etape 3 : </div><strong class="ingRec"><%= prepa.etape3 %></strong><br>
+                                    <% } %>
+                                <% }) %>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="likeunlike">
+                        <form action="/likeRecette/<%= success.id %>" method="post">
+                            <button id="like"> j'aime <i class="glyphicon glyphicon-thumbs-up"></i>
+                                <%= success.likesCount %>
+                            </button><br>
+                        </form>
+                        <form action="/unlikeRecette/<%= success.id %>" method="post">
+                            <button id="unlike"> je n'aime pas <span
+                                    class="glyphicon glyphicon-thumbs-down"></span></button>
+                        </form>
+                    </div>
+                    <div class="listComment">
+                        <form action="/createComment/<%=success.id %>" id="createCom" method="post">
+                            <div class="Comm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-chat-dots" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                    <path
+                                        d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z" />
+                                </svg>
+                                <div class="form-group">
+                                    <input type="text" name="comment" class="form-control" id="formGroupExampleInput" aria-describedby="emailHelp" placeholder="Saisir votre commentaire" Required>
+                                    <button type="submit" id="valideComment">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg"viewBox="0 0 16 16">
+                                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                                        </svg> valider</button>
+                                    <br>
+                                    <a href="#Commentaires" id="comment">Voir les commentaires</a>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="Commentaires">
+                            <div class="titCom">Les commentaires</div>
+                            <% success.commentaires.map((comm)=> { %>
+                                <% if(comm.comment) {%>
+                                    <h7 id="Coment">
+                                        <%= comm.comment %>
+                                    </h7><br>
+                                    <div class="iconsupp">
+                                        <% if (success.id===comm.userId) {%>
+                                            <form action="/recette/<% success.id %>/deleteComment/<%= comm.id %>"
+                                                method="post">
+                                                <button type="submit" id="supp">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-archive"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+                                                    </svg>
+                                                </button>
+                                            </form>
+                                        <% } %>
+                                    </div>
+                                <% } %>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            <% } %>
+        </div>
+    </div>
+    <br>
+    <img class="image1" src="/img/FV.jpg" alt="">
+    <hr>
+    <div class="pieds">
+        <div class="RS">
+            <i class="fa fa-facebook-f" style="font-size:20px"></i>
+            <i class="fa fa-twitter" style="font-size:20px"></i>
+            <i class="fa fa-instagram" style="font-size:20px"></i>
+        </div>
+    </div>
+    <p>© 2022 - Bon appétit</p>
+</body>
+</html>

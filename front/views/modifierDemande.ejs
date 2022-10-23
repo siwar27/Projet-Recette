@@ -1,0 +1,81 @@
+<%- include('./includes/header.ejs') %>
+    <div class="logoCuisine">
+        <img id='logo' src="/img/logoCuisineSi.jpg" alt="">
+        <p>Cuisine Si</p>
+    </div>
+    <div class="menuAccueil">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <div class="nav_01">
+                                <li><a href="/">Accueil</a></li>
+                            </div>
+                            <div class="nav_01">
+                                <li><a href="/Demandes">Demandes</a></li>
+                            </div>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="btn btn-outlok-success dropdown-toggle" type="button" id="b"
+                                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Profil
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="list">
+                                        <li><a class="dropdown-item dropdown-sm" id="list1" href="/VosCoordonnees">Vos
+                                                coordonnées</a></li>
+                                        <li><a class="dropdown-item" id="list2" href="/VosDemandes">Vos demandes</a>
+                                        </li>
+                                        <li><a class="dropdown-item" id="list3" href="/logout">Déconnexion</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="dem">
+        <h3>Modifier votre demande</h3>
+        <section class="menu">
+            <div class="partie4">
+                <% if(locals.success){ %>
+                    <form action="/putDemande/<%= success.id %>" method="post" class="new"
+                        onctype="multipart/form-data">
+                        <div class="forml">
+                            <div class="parr">
+                                <div class="col-auto my-1">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Choix</label>
+                                    <select class="custom-select mr-sm-2" name="choix" id="inlineFormCustomSelect">
+                                        <option selected>Choisir...</option>
+                                        <option value="1">Salé</option>
+                                        <option value="2">Sucré</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="par3">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Votre demande est: " <%= success.proposition %>
+                                        "</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" name="proposition"
+                                    rows="3" placeholder="La nouvelle demande"></textarea>
+                            </div>
+                            <br>
+                            <input type="submit" value="Modifier" id="Modifier" /><br>
+                        </div>
+                    </form>
+                 <% } %>
+            </div>
+            <hr>
+        </section>
+    </div>
+    <br>
+    <p>© 2022 - Bon appétit</p>
+</body>
+</html>

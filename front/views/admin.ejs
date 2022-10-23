@@ -1,0 +1,143 @@
+<%- include('./includes/header.ejs') %>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <img id='logo' src="/img/logoCuisineSi.jpg" alt="">
+                    <div class="nav_01">
+                        <li><a href="/admin">Accueil</a></li>
+                    </div>
+                    <div class="nav_01">
+                        <li><a href="#mesRecettes">Les recettes</a></li>
+                    </div>
+                    <div class="nav_01">
+                        <li><a href="/utilisateur">Les utilisateurs</a></li>
+                    </div>
+                    <div class="nav_01">
+                        <li><a href="/DemandesAll">Les demandes</a></li>
+                    </div>
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn btn-outlok-success dropdown-toggle" type="button" id="b"
+                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Profil
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="list">
+                                <li><a class="dropdown-item dropdown-sm" id="list1" href="/VosCoordonneesAdmin">Vos
+                                        coordonnées</a></li>
+                                <li><a class="dropdown-item" id="list3" href="/logout">Déconnexion</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+    <div class="dem">
+        <br>
+        <p>Retrouvez toutes nos recettes tunisiennes chez nous </p>
+        <section class="menu">
+            <h5 id="sale"><strong> Créer votre recette </strong></h5>
+            <div class="partie1">
+                <form action="/new" method="post" class="new" onctype="multipart/form-data">
+                    <div class="forml">
+                        <div class="par1">
+                            <div class="form-group">
+                                <input type="text" name="titre" class="form-control" id="formGroupExampleInput" aria-describedby="emailHelp" placeholder="Titre" Required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label"></label>
+                                <input class="form-control" type="file" name='attachement' id="formFile" Required>
+                            </div>
+                        </div>
+                        <div class="par2">
+                            <div class="col-auto my-1">
+                                <label class="mr-sm-2" for="inlineFormCustomSelect">Choix</label>
+                                <select class="custom-select mr-sm-2" name="choix" id="inlineFormCustomSelect" Required>
+                                    <option selected>Choisir...</option>
+                                    <option value="1">Salé</option>
+                                    <option value="2">Sucré</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="par3">
+                        <br>
+                        <% if(locals.error) { %>
+                            <div class="alert alert-danger" role="alert">
+                                <%= locals.error %>
+                            </div>
+                        <% } %>
+                            <input type="submit" value="Publier" id="Se-connecter" /><br>
+                    </div>
+                </form>
+
+            </div>
+    </div>
+    <br>
+    <h5 id="mesRecettes"><strong>Toutes mes recettes </strong></h5>
+    <br>
+    <div id="recettes">
+        <% if(locals.success){ %>
+            <div class="team" style="margin-top:30px;margin-right:40px">
+                <table class="ui single line table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Titre</th>
+                            <th>Attachement</th>
+                            <th>choix</th>
+                            <th>Ingredients</th>
+                            <th>Preparations</th>
+                            <th>Option 1</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (var i=success.length-1 ;i>=0; i-- ) { %>
+                            <tr>
+                                <td>
+                                    <%= success[i].id %>
+                                </td>
+                                <td><a href="/#/<%= success[i].id %>">
+                                        <%= success[i].titre %>
+                                </td>
+                                <td>
+                                    <%= success[i].attachement %>
+                                </td>
+                                <td>
+                                    <%= success[i].choix %>
+                                </td>
+                                <td>
+                                    <form action="/creerIng/<%= success[i].id %>" method="get">
+                                        <button type="submit" class="btn btn-success">Ajouter Ingredients</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="/creerPrepa/<%= success[i].id %>" method="get">
+                                        <button type="submit" class="btn btn-primary">Ajouter Préparations</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="/deleteRecette/<%= success[i].id %>" method="POST">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-danger btn-sm"
+                                            onClick='return confirm("Voulez-vous vraiment supprimer cette recette ?")'>Supprimer</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+         <% } %>
+    </div>
+    <hr>
+    </section>
+    <p>© 2022 - Bon appétit</p>
+</body>
+</html>

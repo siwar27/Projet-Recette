@@ -1,0 +1,98 @@
+<%- include('./includes/header.ejs') %>
+<img id='logo' src="/img/logo.jpg" alt="">
+<p>Cuisine Si</p>
+<header>
+    <ul class="show"> 
+        <div class="nav_01">
+            <li><a  href="/admin" >Accueil</a></li>
+        </div>
+        <div class="nav_01">
+            <li><a  href="#mesRecettes">Les recettes</a></li>
+        </div>
+        <div class="nav_01">
+            <li><a  href="/utilisateur">Les utilisateurs</a></li>
+        </div>
+        <div class="nav_01">
+            <li><a  href="/DemandesAll">Les demandes</a></li>
+        </div>
+        <li>
+            <div class="dropdown">
+                <button class="btn btn-outlok-success dropdown-toggle" type="button" id="b"id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Profil
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="list">
+                <li><a class="dropdown-item dropdown-sm" id="list1" href="/VosCoordonneesAdmin">Vos coordonnées</a></li>
+                <li><a class="dropdown-item" id="list3" href="/logout">Déconnexion</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    <label id="icon">
+        <i class="fa-solid fa-bars"></i>
+    </label>
+</header>
+<hr>
+<p>Retrouvez toutes nos recettes tunisiennes chez nous </p>
+
+<section class="menu">
+    <h5 id="sale"><strong> Modifier votre recette </strong></h5>
+    <div class="partie1">
+        <% if(locals.success){ %>
+            <form action="/putRecette/<%= success.id %>" method="post" class="new" onctype="multipart/form-data">
+                <div class="forml">
+                    <div class="par1">
+                        <div class="form-group">
+                            <input type="text" name="titre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder= <%= success.titre %>>
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label"></label>
+                            <input class="form-control" type="file" name='attachement' id="formFile">  
+                        </div>
+                    </div>
+                    <div class="par2">
+                        <div class="form-group">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="ingredient" rows="3" placeholder= <%= success.ingredient %>></textarea>
+                        </div>
+                        <div class="col-auto my-1">
+                            <label class="mr-sm-2" for="inlineFormCustomSelect">Choix</label>
+                            <select class="custom-select mr-sm-2" name="choix" id="inlineFormCustomSelect">
+                            <option selected>Choisir...</option>
+                            <option value="1">Salé</option>
+                            <option value="2">Sucré</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="par3">
+                    <div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="preparation" rows="3" placeholder= <%= success.preparation %>></textarea>
+                    </div>
+                    <br>
+                    <% if(locals.error) { %>
+                        <div class="alert alert-danger" role="alert">
+                            <%= locals.error %>
+                        </div>
+                    <% } %>
+                    <input type="submit" value="Modifer" id="Modifier"/><br>
+                </div>
+            </form>
+        <% } %>
+    </div>
+
+    <br>
+    <hr>
+</section>
+
+<img class="image1" src="/img/menu.jpg" alt="">
+<hr>
+<div class="pieds">
+    <img id='logo' src="/img/logo.jpg" alt="">
+    <div class="RS">
+        <i class="fa fa-facebook-f" style="font-size:20px"></i>
+        <i class="fa fa-twitter" style="font-size:20px"></i>
+        <i class="fa fa-instagram" style="font-size:20px"></i>
+    </div>
+</div>
+<p>© 2022 - Bon appétit</p>
+</body>
+</html>
